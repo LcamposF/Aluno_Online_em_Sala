@@ -86,8 +86,7 @@ public class MatriculaAlunoService {
         List<MatriculaAluno> matriculasDoAluno = matriculaAlunoRepository.findByAlunoId(alunoId);
 
         if (matriculasDoAluno.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-                    "Esse aluno não possui matriculas");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Esse aluno não possui matriculas");
         }
 
         HistoricoAlunoResponse historicoAluno = new HistoricoAlunoResponse();
